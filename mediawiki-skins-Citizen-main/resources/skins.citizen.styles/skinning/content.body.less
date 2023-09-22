@@ -1,0 +1,31 @@
+/*
+ * Citizen
+ *
+ * Module: mediawiki.skinning.content.body
+ * Version: REL1_39
+ *
+ * Date: 2022-11-14
+*/
+
+// Needed the specificity
+.skin-citizen {
+	.mw-body-content {
+		.error,
+		.warning,
+		.success {
+			font-size: larger;
+		}
+
+		.error {
+			color: var( --color-text-error );
+		}
+
+		.warning {
+			color: var( --color-text-warning );
+		}
+
+		.success {
+			color: var( --color-text-success );
+		}
+	}
+}

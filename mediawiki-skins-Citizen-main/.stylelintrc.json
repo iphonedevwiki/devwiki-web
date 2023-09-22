@@ -1,0 +1,17 @@
+{
+	"plugins": [
+		"stylelint-order"
+	],
+	"extends": [
+		"stylelint-config-wikimedia",
+		"stylelint-config-recess-order"
+	],
+	"rules": {
+		"font-weight-notation": null,
+		"selector-max-id": null,
+		"no-descending-specificity": null,
+		"declaration-no-important": null,
+		"unit-disallowed-list": null,
+		"declaration-property-unit-disallowed-list": null
+	}
+}

@@ -1,0 +1,45 @@
+/*
+ * Citizen
+ *
+ * SkinStyles for Special:RecentChanges and Watchlist
+ * Module: mediawiki.special.changeslist.legend
+ * Version: 1.39.0
+ *
+ * Date: 2023-05-29
+*/
+
+@import '../../../resources/variables.less';
+@import '../../../resources/mixins.less';
+
+// Need additional parent to override
+.mw-changeslist-legend {
+	position: relatve;
+	z-index: 2 !important; // so it is not covered by the date header
+	padding: var( --space-sm );
+	font-size: 0.8125rem;
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius--small );
+
+	// Citizen label styles
+	strong {
+		font-weight: var( --font-weight-normal );
+		color: var( --color-base--subtle );
+		letter-spacing: 0.05em;
+	}
+
+	dl,
+	ul {
+		margin-top: var( --space-xs );
+	}
+
+	ul {
+		margin-bottom: 0;
+		margin-left: var( --space-sm );
+	}
+
+	@media ( max-width: @width-breakpoint-tablet ) {
+		float: none;
+		margin: 0;
+	}
+}

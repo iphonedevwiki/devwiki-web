@@ -1,0 +1,161 @@
+/*
+ * Citizen
+ *
+ * SkinStyles for File pages
+ * Module: mediawiki.action.view.filepage
+ * Version: 1.39.0
+ *
+ * Date: 2022-10-28
+*/
+
+@import '../../../resources/mixins.less';
+@import '../../../resources/variables.less';
+
+// Custom sticky header handling
+#citizen-body-header-sticky-sentinel {
+	display: none;
+}
+
+#filetoc {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	font-weight: var( --font-weight-medium );
+	white-space: nowrap;
+	background-color: transparent; // sticky header will handle background
+	border: 0;
+	.citizen-sticky-header;
+
+	li {
+		padding-right: 0;
+	}
+
+	a {
+		display: block;
+		padding: var( --space-xxs ) var( --space-md );
+		margin-top: var( --space-xs );
+		margin-bottom: var( --space-xs );
+		border-radius: var( --border-radius--small );
+
+		&:hover {
+			background-color: var( --background-color-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-quiet--active );
+		}
+	}
+}
+
+.mw-filepage-resolutioninfo {
+	margin-top: var( --space-xs );
+	margin-right: ~'calc( var(  --space-xxs ) * -1 )';
+	// Compensate for margin in links, because we can't use flex gap
+	margin-left: ~'calc( var(  --space-xxs ) * -1 )';
+	// HACK: Hide text
+	font-size: 0;
+
+	.mw-thumbnail-link {
+		display: inline-block;
+		padding: var( --space-xxs ) var( --space-md );
+		margin: var( --space-xxs );
+		font-size: 0.875rem;
+		color: var( --color-base--subtle );
+		background-color: var( --color-surface-0 );
+		border: 1px solid var( --border-color-base );
+		border-radius: var( --border-radius--pill );
+
+		&:hover {
+			color: #fff;
+			background-color: var( --color-primary--hover );
+		}
+
+		&:active {
+			color: #fff;
+			background-color: var( --color-primary--active );
+		}
+	}
+
+	// Current preview resolution
+	> .mw-thumbnail-link {
+		color: #fff;
+		background-color: var( --color-primary );
+	}
+}
+
+.fullImageLink {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: var( --space-xl );
+	margin-bottom: var( --space-xl );
+
+	img {
+		// Large image can overflow
+		max-width: 100%;
+		height: auto;
+		background-color: var( --color-surface-2 );
+		transition: var( --transition-hover );
+		transition-property: transform;
+	}
+
+	// Add affordance for full res image
+	> a:hover > img {
+		transform: scale( 1.1 );
+	}
+}
+
+#file {
+	> a {
+		overflow: hidden;
+		border-radius: var( --border-radius--medium );
+		box-shadow: var( --box-shadow-card );
+	}
+}
+
+.filehistory a img,
+#file img:hover {
+	// Because this gets overriden by a default style
+	background-color: var( --color-surface-2 );
+}
+
+.fileInfo {
+	color: var( --color-base--subtle );
+}
+
+.fullMedia {
+	font-size: 0.875rem;
+}
+
+.mw_metadata {
+	margin: 0;
+	font-size: 0.8125rem;
+}
+
+.mw_metadata caption {
+	font-weight: var( --font-weight-semibold );
+	color: var( --color-base--emphasized );
+}
+
+.mw_metadata tr + tr {
+	border-top: 1px solid var( --border-color-base );
+}
+
+.mw_metadata td,
+.mw_metadata th {
+	padding: var( --space-xs );
+	border: 0;
+}
+
+// Citizen label styles
+.mw_metadata th {
+	font-weight: var( --font-weight-normal );
+	color: var( --color-base--subtle );
+	text-align: start;
+	letter-spacing: 0.05em;
+	background-color: transparent;
+}
+
+.mw_metadata td {
+	background-color: transparent;
+}

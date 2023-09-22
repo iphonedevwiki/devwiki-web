@@ -1,0 +1,134 @@
+/*
+ * Citizen
+ *
+ * SkinStyles for Extension:DiscussionTools
+ * Module: ext.discussionTools.init.styles
+ * Version: REL1_39 1aae2cc
+ *
+ * Date: 2023-06-24
+ */
+
+.ext-discussiontools-init-replylink-buttons {
+	.ext-discussiontools-init-replylink {
+		&-bracket {
+			color: var( --color-base--subtle );
+		}
+
+		&-divider {
+			color: var( --border-color-base );
+		}
+	}
+
+	.ext-discussiontools-init-replylink-open & > .ext-discussiontools-init-replylink-reply {
+		color: var( --color-base--subtle );
+	}
+
+	&.ext-discussiontools-init-replylink-active > .ext-discussiontools-init-replylink-reply {
+		color: var( --color-base );
+	}
+}
+
+.ext-discussiontools-init-publishedcomment {
+	background-color: var( --background-color-success );
+}
+
+.ext-discussiontools-init-targetcomment {
+	background-color: var( --background-color-primary--hover );
+}
+
+.ext-discussiontools-init-section-subscribe {
+	&.mw-editsection-like {
+		margin-top: 0;
+	}
+
+	&-bracket {
+		display: none;
+	}
+
+	// Align with .citizen-editsection-icon
+	&-link {
+		display: block;
+		width: 1.875rem;
+		height: 1.875rem;
+		font-size: 0.875rem;
+		text-indent: -9999px; // Hide text
+		border-radius: var( --border-radius--small );
+		opacity: var( --opacity-icon-base );
+		transition: var( --transition-hover );
+		transition-property: opacity;
+
+		&::before {
+			position: absolute;
+			display: block;
+			width: inherit;
+			height: inherit;
+			content: '';
+			// FIXME: Figure out a way to use OOUI icon for extension
+			background-image: url( data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KCTx0aXRsZT4KCQliZWxsCgk8L3RpdGxlPgoJPHBhdGggZD0iTTExLjUgMi4xOUMxNC4wOSAyLjg2IDE2IDUuMiAxNiA4djZsMiAydjFIMnYtMWwyLTJWOGMwLTIuOCAxLjkxLTUuMTQgNC41LTUuODFWMS41QzguNS42NyA5LjE3IDAgMTAgMHMxLjUuNjcgMS41IDEuNXYuNjl6TTEwIDRDNy43OSA0IDYgNS43OSA2IDh2N2g4VjhjMC0yLjIxLTEuNzktNC00LTR6TTggMThoNGMwIDEuMS0uOSAyLTIgMnMtMi0uOS0yLTJ6Ii8+Cjwvc3ZnPgo= );
+			filter: var( --filter-invert );
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 1.125rem;
+		}
+
+		&[ data-mw-subscribed='1' ]::before {
+			// FIXME: Figure out a way to use OOUI icon for extension
+			background-image: url( data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KCTx0aXRsZT4KCQliZWxsCgk8L3RpdGxlPgoJPHBhdGggZD0iTTE2IDdhNS4zOCA1LjM4IDAgMDAtNC40Ni00Ljg1QzExLjYgMS40NiAxMS41MyAwIDEwIDBTOC40IDEuNDYgOC40NiAyLjE1QTUuMzggNS4zOCAwIDAwNCA3djZsLTIgMnYxaDE2di0xbC0yLTJ6bS02IDEzYTMgMyAwIDAwMy0zSDdhMyAzIDAgMDAzIDN6Ii8+Cjwvc3ZnPgo= );
+		}
+
+		&:hover {
+			background-color: var( --background-color-quiet--hover );
+			opacity: var( --opacity-icon-base--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-quiet--hover );
+			opacity: var( --opacity-icon-base--active );
+		}
+	}
+
+	&-link&-link-pending {
+		color: var( --color-base--subtle );
+	}
+}
+
+.ext-discussiontools-init-pageframe-latestcomment {
+	color: var( --color-base--subtle );
+}
+
+.ext-discussiontools-visualenhancements_pageframe-enabled {
+	.ext-discussiontools-init-sidebar-meta {
+		color: var( --color-base--subtle );
+	}
+}
+
+.ext-discussiontools-visualenhancements-enabled {
+	.ext-discussiontools-init-section {
+		border-top-color: var( --border-color-base );
+
+		&-metaitem {
+			color: var( --color-base--subtle );
+
+			& + .ext-discussiontools-init-section-metaitem {
+				border-left-color: var( --border-color-base );
+			}
+		}
+	}
+
+	h2.ext-discussiontools-ui-newTopic-sectionTitle .oo-ui-inputWidget-input {
+		font-family: var( --font-family-base );
+		font-weight: var( --font-weight-semibold );
+	}
+}
+
+.ext-discussiontools-emptystate {
+	.mw-parser-output:not( .noarticletext ) & {
+		border-top-color: var( --border-color-base );
+	}
+}
+
+.ext-discussiontools-autotopicsubpopup {
+	&-title {
+		font-weight: var( --font-weight-semibold );
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alistair3149",
+			"MathXplore",
+			"Shirayuki",
+			"Tamaki Wakita",
+			"バレロン"
+		]
+	},
+	"citizen.css": "/* ここに記述したCSSは、すべてのCitizen外装利用者に読み込まれます */",
+	"citizen-languages-toggle": "その他の言語",
+	"citizen-actions-more-toggle": "その他の操作",
+	"citizen-sitestats-articles-label": "記事",
+	"citizen-sitestats-images-label": "ファイル",
+	"citizen-sitestats-users-label": "利用者",
+	"citizen-sitestats-edits-label": "編集",
+	"citizen-page-info-copyright": "著作権",
+	"citizen-page-info-credits": "クレジット",
+	"citizen-page-info-lastmod": "最終更新",
+	"citizen-action-addsection": "話題を追加",
+	"citizen-jumptotop": "トップに戻る",
+	"citizen-search-fulltext": "$1を含むページを検索",
+	"citizen-search-mediasearch": "メディアを検索",
+	"citizen-search-noresults-title": "$1に関する結果はありません",
+	"citizen-search-noresults-desc": "以下のオプションを試す",
+	"citizen-tagline-user-regdate": "$1に参加しました",
+	"prefs-citizen-theme-label": "テーマ",
+	"prefs-citizen-theme-option-light": "ライト",
+	"prefs-citizen-theme-option-dark": "ダーク",
+	"prefs-citizen-fontsize-label": "フォント サイズ",
+	"prefs-citizen-lineheight-label": "行の高さ"
+}

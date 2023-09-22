@@ -1,0 +1,53 @@
+/*
+ * Citizen
+ *
+ * Module: mediawiki.skinning.content.tables
+ * Version: REL1_39
+ *
+ * Date: 2022-11-14
+*/
+
+.wikitable {
+	margin: var( --space-md ) 0;
+	border-collapse: collapse;
+
+	caption {
+		padding-right: var( --space-sm );
+		padding-left: var( --space-sm );
+		font-weight: var( --font-weight-semibold );
+		color: var( --color-base--emphasized );
+		text-align: start;
+	}
+
+	thead + tbody {
+		border-top: 1px solid var( --border-color-base );
+	}
+
+	tbody tr {
+		// Divider
+		+ tr {
+			border-top: 1px solid var( --border-color-base );
+		}
+
+		&:hover {
+			background-color: var( --background-color-quiet--hover );
+		}
+	}
+
+	th {
+		font-size: 0.8125rem;
+		font-weight: var( --font-weight-normal );
+		color: var( --color-base--subtle );
+		text-align: start;
+		letter-spacing: 0.05em;
+	}
+
+	td {
+		font-size: 0.875rem;
+	}
+
+	th,
+	td {
+		padding: var( --space-xs ) var( --space-sm );
+	}
+}

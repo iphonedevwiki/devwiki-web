@@ -1,0 +1,220 @@
+.citizen-header {
+	--header-icon-size: ~'calc( var( --header-button-size ) / 2 )';
+	--header-button-size: ~'calc( var( --header-size ) - var(  --space-xs ) * 2 )';
+	--header-direction: row;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: @z-index-site-header;
+	display: flex;
+	flex-direction: var( --header-direction );
+	gap: var( --space-xxs );
+	padding: var( --space-xs );
+	background-color: var( --color-surface-0 );
+	border-top: 1px solid var( --border-color-base );
+
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__button {
+		display: grid;
+		place-items: center;
+		width: var( --header-button-size );
+		height: var( --header-button-size );
+		border-radius: var( --border-radius--small );
+		contain: strict;
+
+		// Used in checkbox hack
+		&Checkbox {
+			position: absolute;
+			display: block;
+			width: inherit;
+			height: inherit;
+			contain: strict;
+		}
+
+		// Pure CSS icons
+		&Icon {
+			width: var( --header-icon-size );
+			height: var( --header-icon-size );
+			overflow: hidden; // Sometimes CSS animation can clip
+			filter: var( --filter-invert );
+			contain: strict;
+		}
+
+		&Icon,
+		.citizen-ui-icon {
+			margin: auto;
+		}
+
+		&Icon,
+		.citizen-ui-icon::before {
+			opacity: var( --opacity-icon-base );
+			transition: var( --transition-hover );
+			transition-property: transform, opacity;
+		}
+
+		&:hover {
+			background-color: var( --background-color-quiet--hover );
+
+			.citizen-ui-icon::before,
+			.citizen-header__buttonIcon {
+				opacity: var( --opacity-icon-base--hover );
+			}
+		}
+
+		&:active {
+			background-color: var( --background-color-quiet--active );
+
+			.citizen-ui-icon::before,
+			.citizen-header__buttonIcon {
+				opacity: var( --opacity-icon-base--active );
+			}
+		}
+	}
+
+	&__logo {
+		padding: 0 var( --space-xs ) 0 0;
+		margin: 0 var( --space-xxs );
+		border-right: 1px solid var( --border-color-base );
+
+		img {
+			margin: auto;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: var( --header-direction );
+		flex-grow: 1;
+		gap: var( --space-xxs );
+		justify-content: space-between;
+		min-width: 0;
+		overflow-x: auto;
+
+		.citizen-menu-checkbox-checkbox:checked {
+			~ .citizen-header__button {
+				background-color: var( --background-color-primary--active );
+			}
+		}
+
+		// Hide header menu labels
+		.citizen-menu__heading {
+			.mixin-screen-reader-text;
+		}
+	}
+
+	&__start,
+	&__end {
+		display: flex;
+		flex-direction: var( --header-direction );
+		flex-shrink: 0; // let _inner handle the overflow
+		gap: var( --space-xxs );
+	}
+
+	&__start {
+		align-items: center;
+		min-width: 0;
+	}
+
+	// Reset
+	ul {
+		margin: 0;
+		list-style: none;
+	}
+}
+
+// Notifications
+#p-notifications {
+	ul {
+		display: flex;
+		flex-direction: var( --header-direction );
+		gap: var( --space-xxs );
+		align-items: center;
+	}
+}
+
+// Reset hover styles if it is a touch device
+// This is dumb but hover:hover overrides active states
+@media ( hover: none ) {
+	.citizen-header {
+		&__button {
+			&:hover {
+				background-color: none;
+
+				.citizen-header__buttonIcon {
+					opacity: var( --opacity-icon-base );
+				}
+			}
+		}
+	}
+}
+
+@media ( min-width: @width-breakpoint-desktop ) {
+	.citizen-header {
+		--header-direction: column;
+		top: 0;
+		right: unset;
+		left: 0;
+		border-top: 0;
+		border-right: 1px solid var( --border-color-base );
+
+		&__logo {
+			padding: 0 0 var( --space-xs ) 0;
+			margin: var( --space-xxs ) 0;
+			border-right: 0;
+			border-bottom: 1px solid var( --border-color-base );
+		}
+	}
+}
+
+/* Hide header when scroll down on smaller screen sizes */
+@media ( max-width: @width-breakpoint-tablet ) {
+	.citizen-header {
+		transition: var( --transition-menu );
+		transition-property: transform;
+
+		/*
+		 * Add overlay to menus as affordnance
+		 * TODO: We should use JS to add the overlay instead of abusing CSS
+		 * TODO: This does not work for TOC and Pref menu
+		*/
+		.citizen-menu-checkbox-checkbox {
+			~ .citizen-header__button {
+				&::before {
+					position: fixed;
+					inset: 0 0 0 0;
+					z-index: 1;
+					width: auto;
+					height: auto;
+					pointer-events: none;
+					visibility: hidden;
+					content: '';
+					background-color: var( --background-color-overlay );
+					opacity: 0;
+					transition: var( --transition-menu );
+					transition-property: opacity;
+				}
+			}
+
+			&[ aria-expanded='true' ] {
+				~ .citizen-header__button {
+					contain: initial;
+
+					&::before {
+						pointer-events: auto;
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.citizen-scroll--down .citizen-header {
+		transform: translateY( 100% );
+	}
+}

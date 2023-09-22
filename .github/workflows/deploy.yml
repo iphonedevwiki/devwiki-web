@@ -1,0 +1,25 @@
+name: Website Deployment
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Docker Image
+      env:
+        DEPLOY_TARGET_REGISTRY: ${{ vars.DEPLOY_TARGET_REGISTRY }}
+        DEPLOY_TARGET_TAG: ${{ vars.DEPLOY_TARGET_TAG }}
+      run: docker build . --file Dockerfile --platform linux/amd64 --tag $DEPLOY_TARGET_REGISTRY/$DEPLOY_TARGET_TAG:latest --tag $DEPLOY_TARGET_TAG:latest
+    - name: Connect to registry
+      env:
+        SK_DO_DOCKER_REGISTRY_API_KEY: ${{ secrets.SK_DO_DOCKER_REGISTRY_API_KEY }}
+      run: echo $SK_DO_DOCKER_REGISTRY_API_KEY | docker login registry.digitalocean.com --username $SK_DO_DOCKER_REGISTRY_API_KEY --password-stdin
+    - name: Push new image
+      env:
+        DEPLOY_TARGET_REGISTRY: ${{ vars.DEPLOY_TARGET_REGISTRY }}
+        DEPLOY_TARGET_TAG: ${{ vars.DEPLOY_TARGET_TAG }}
+      run: docker push $DEPLOY_TARGET_REGISTRY/$DEPLOY_TARGET_TAG:latest

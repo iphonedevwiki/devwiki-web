@@ -1,0 +1,153 @@
+@import '../variables.less';
+@import '../mixins.less';
+
+.citizen-pref {
+	&__button {
+		&[ aria-expanded='true' ] {
+			background-color: var( --background-color-primary--active );
+		}
+	}
+
+	&-item {
+		display: grid;
+		gap: 0.25rem;
+
+		&__label {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+
+		&__value {
+			font-weight: var( --font-weight-medium );
+			color: var( --color-base--emphasized );
+		}
+	}
+
+	&-theme {
+		&-option {
+			flex-grow: 1;
+			padding: 0.5rem 1rem;
+			font-weight: var( --font-weight-medium );
+			text-align: center;
+			white-space: nowrap;
+			cursor: pointer;
+			border: 2px solid var( --border-color-base );
+			border-radius: var( --border-radius--medium );
+
+			&:hover {
+				border-color: var( --color-primary--hover );
+				box-shadow: var( --box-shadow-card );
+			}
+
+			&:active {
+				border-color: var( --color-primary--active );
+			}
+		}
+	}
+
+	// We only show min and max value
+	&__tickmarks {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.8125rem;
+		color: var( --color-base--subtle );
+	}
+}
+
+#citizen-pref {
+	&-header {
+		padding: var( --space-lg ) var( --space-md ) 0;
+		font-size: 1rem;
+		font-weight: var( --font-weight-semibold );
+		color: var( --color-base--emphasized );
+	}
+
+	// TODO: unify the dropdown menu style somewhere
+	&-panel {
+		.citizen-header-card( right );
+
+		&.citizen-pref-panel--active {
+			.citizen-card-show;
+		}
+
+		fieldset {
+			padding: 0 var( --space-md );
+			margin: 0;
+			font-size: 0.875rem;
+			appearance: none;
+			border: 0;
+		}
+
+		> * {
+			opacity: 0;
+		}
+	}
+
+	&-form {
+		display: grid;
+		gap: var( --space-md );
+		margin: var( --space-md ) 0;
+	}
+
+	&-theme {
+		&-option {
+			&-light {
+				color: @color-base;
+				background: @color-surface-0;
+			}
+
+			&-dark {
+				color: ~'hsl( var( --color-primary__h ), 10%, 75% )';
+				background: ~'hsl( var( --color-primary__h ), 20%, 10% )';
+			}
+		}
+
+		fieldset {
+			display: flex;
+			gap: 0.5rem;
+			width: 100%;
+			padding: 0;
+			margin-top: 0.25rem;
+		}
+
+		// Let label be the radio button
+		input {
+			display: none;
+
+			&:checked {
+				+ label {
+					border-color: var( --color-primary );
+				}
+			}
+		}
+	}
+
+	&-resetbutton {
+		width: 100%;
+		padding: var( --space-sm ) var( --space-md );
+		font-family: inherit;
+		font-size: 0.875rem;
+		font-weight: var( --font-weight-medium );
+		color: #fff;
+		appearance: none;
+		cursor: pointer;
+		background: var( --color-destructive );
+		border: 0;
+		border-radius: 0 0 var( --border-radius--medium ) var( --border-radius--medium );
+
+		&:hover {
+			background: var( --color-destructive--hover );
+		}
+
+		&:active {
+			background: var( --color-destructive--active );
+		}
+	}
+}
+
+@media ( hover: hover ) {
+	.citizen-pref:hover .citizen-pref__button .citizen-ui-icon::before {
+		transform: rotate3d( 0, 0, 1, 90deg );
+	}
+}

@@ -1,0 +1,655 @@
+/*
+ * Citizen
+ *
+ * SkinStyles for Extension:SemanticMediaWiki
+ * Module: ext.smw.style
+ * Version: 4.0.2 (0fcdfce)
+ *
+ * Date: 2022-10-20
+*/
+
+/* smw/ext.smw.css */
+.smw-placeholder {
+	font-family: inherit;
+	font-size: 0.875rem;
+	line-height: inherit;
+	background-color: var( --color-surface-2 );
+	border-radius: var( --border-radius--small );
+}
+
+.client-nojs .smw-placeholder::after {
+	color: var( --color-destructive );
+}
+
+.smw-personal-jobqueue-watchlist:hover,
+.smw-personal-jobqueue-watchlist:focus,
+.smw-personal-jobqueue-watchlist:active {
+	color: var( --color-primary );
+}
+
+.item-count {
+	color: var( --color-base );
+	background-color: var( --color-surface-3 );
+	border-radius: var( --border-radius--small );
+}
+
+.item-count.active {
+	color: var( --color-base );
+	background-color: var( --color-surface-3 );
+}
+
+/* make divs look like <pre> */
+.smwpre {
+	color: var( --color-base );
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smw-debug-box {
+	background: var( --background-color-warning );
+	border-color: var( --color-warning );
+}
+
+.smw-debug-box-header {
+	font-family: var( --font-family-base );
+	border-bottom-color: var( --color-warning );
+}
+
+div.smwtimeline {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smwtable-striped tbody > tr:nth-child( even ) {
+	background-color: var( --color-surface-2 );
+}
+
+.smwtable-striped tbody > tr:nth-child( odd ) {
+	background-color: var( --color-surface-0 );
+}
+
+.smwtable-striped tbody > tr:hover {
+	background-color: var( --background-color-quiet--hover );
+}
+
+.smwtable-clean tr {
+	border-top-color: var( --border-color-base );
+}
+
+.smwtable-clean tr > th {
+	border-top-color: var( --border-color-base );
+}
+
+.smwtable-clean tr > td {
+	border-top-color: var( --border-color-base );
+}
+
+.smwtable-clean tbody > tr:nth-child( even ) {
+	background-color: var( --color-surface-2 );
+}
+
+div.smwhr hr {
+	color: var( --border-color-base );
+	background-color: var( --border-color-base );
+}
+
+span.smwwarning {
+	color: var( --background-color-icon );
+}
+
+span.smwsearchicon {
+	color: var( --background-color-icon );
+}
+
+span.smwsearch a {
+	color: var( --background-color-icon );
+}
+
+span.smwsearch a:hover {
+	color: var( --background-color-icon--hover );
+}
+
+// Added active state
+span.smwsearch a:active {
+	color: var( --background-color-icon--hover );
+}
+
+span.smwbrowse a {
+	color: var( --background-color-icon );
+}
+
+span.smwbrowse a:hover {
+	color: var( --background-color-icon--hover );
+}
+
+// Added active state
+span.smwbrowse a:active {
+	color: var( --background-color-icon--hover );
+}
+
+.concept-documenation {
+	border-top-color: var( --border-color-base );
+}
+
+hr.smw-form-horizontalrule {
+	background-color: var( --border-color-base );
+}
+
+.smw-horizontalrule {
+	border-bottom-color: var( --border-color-base );
+}
+
+.smw-editpage-help {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smw-column-header {
+	color: var( --color-base--emphasized );
+}
+
+.smw-note {
+	font-family: inherit;
+	font-size: 0.875rem;
+	line-height: inherit;
+	background-color: var( --color-surface-2 );
+	border-radius: var( --border-radius--small );
+}
+
+.smw-callout-info {
+	background: var( -background-color-primary--hover );
+	border-left-color: var( --color-primary );
+}
+
+.smw-callout-info .title {
+	color: var( --color-primary );
+}
+
+.smw-callout-info-light {
+	background: var( --color-surface-2 );
+	border-left-color: var( --border-color-base );
+}
+
+.smw-callout-info-light .title {
+	color: var( --color-primary );
+}
+
+.smw-callout-warning {
+	background: var( --background-color-warning );
+	border-left-color: var( --color-warning );
+}
+
+.smw-callout-warning .title {
+	color: var( --color-warning );
+}
+
+.smw-callout-success {
+	background: var( --background-color-success );
+	border-left-color: var( --color-success );
+}
+
+.smw-callout-success .title {
+	color: var( --color-success );
+}
+
+.smw-callout-error {
+	background: var( --background-color-destructive );
+	border-left-color: var( --color-destructive );
+}
+
+.autocomplete-suggestions {
+	color: var( --color-base );
+	background: var( --color-surface-1 );
+	border: 0;
+	border-radius: var( --border-radius--small );
+	box-shadow: var( --box-shadow-dialog );
+}
+
+.autocomplete-suggestion {
+	border-bottom-color: var( --border-color-base );
+}
+
+.autocomplete-selected {
+	background: var( --background-color-primary--active );
+}
+
+.autocomplete-suggestions strong {
+	color: var( --color-primary );
+}
+
+.autocomplete-group strong {
+	border-bottom-color: var( --border-color-base );
+}
+
+.smw-breadcrumb-arrow-right {
+	border-left-color: var( --color-base--subtle );
+}
+
+.smw-ask-action-btn,
+.smw-action-btn {
+	border-radius: var( --border-radius--small );
+}
+
+.smw-ask-action-btn-lgrey,
+a.smw-ask-action-btn-lgrey:visited,
+.smw-action-btn-lgrey,
+.smw-action-btn-lgrey:visited {
+	color: var( --color-base );
+	text-decoration: none;
+	background-color: var( --color-surface-2 );
+	border-color: var( --color-surface-2 );
+}
+
+a.smw-ask-action-btn-lgrey:hover,
+.smw-action-btn-lgrey:hover {
+	color: var( --color-base );
+	background-color: var( --color-surface-2--hover );
+	border-color: var( --color-surface-2--hover );
+}
+
+// Added active state
+a.smw-ask-action-btn-lgrey:active,
+.smw-action-btn-lgrey:active {
+	color: var( --color-base );
+	background-color: var( --color-surface-2--active );
+	border-color: var( --color-surface-2--active );
+}
+
+.smw-ask-action-btn-lblue,
+a.smw-ask-action-btn-lblue:visited {
+	color: #fff;
+	background-color: var( --color-primary );
+	border-color: var( --color-primary );
+}
+
+a.smw-ask-action-btn-lblue:hover {
+	color: #fff;
+	background-color: var( --color-primary--hover );
+	border-color: var( --color-primary--hover );
+}
+
+// Added active state
+a.smw-ask-action-btn-lblue:active {
+	color: #fff;
+	background-color: var( --color-primary--active );
+	border-color: var( --color-primary--active );
+}
+
+.smw-page-indicator {
+	color: var( --background-color-icon );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius--small );
+}
+
+.smw-protection-indicator {
+	color: var( --background-color-icon );
+	border-radius: var( --border-radius--small );
+}
+
+.smw-protection-indicator.with-border {
+	border-color: var( --border-color-base );
+}
+
+.smw-page-indicator.usage-count.moderate {
+	color: var( --color-primary );
+	background-color: var( --background-color-primary--hover );
+	border-color: var( --background-color-primary--hover );
+}
+
+.smw-page-indicator.usage-count.high {
+	color: var( --color-destructive );
+	background-color: var( --background-color-destructive );
+	border-color: var( --background-color-destructive );
+}
+
+.mw-json .value,
+.mw-json-single-value {
+	word-break: break-word;
+}
+
+.ns-112.action-submit .error {
+	color: var( --color-destructive );
+	background: var( --background-color-destructive );
+	border-left-color: var( --color-destructive );
+}
+
+.ns-112.action-submit .error::before {
+	color: var( --color-destructive );
+}
+
+/* smw/ext.smw.dropdown.css */
+.smw-dropdown {
+	font-family: inherit;
+}
+
+.smw-dropdown > a,
+.smw-dropdown > button {
+	font-family: inherit;
+	color: var( --color-base--emphasized );
+	background-color: transparent;
+	border-color: var( --border-color-base );
+}
+
+.smw-dropdown > button {
+	font-weight: var( --font-weight-medium );
+}
+
+.smw-dropdown > a::before,
+.smw-dropdown > button::before {
+	border-top-color: var( --color-base--emphasized );
+}
+
+.smw-dropdown .smw-dropdown-menu {
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius--small );
+	box-shadow: var( --box-shadow-dialog );
+}
+
+.smw-dropdown .smw-dropdown-menu li:hover {
+	background-color: var( --background-color-quiet--hover );
+}
+
+.smw-dropdown .smw-dropdown-menu li a {
+	color: var( --color-base--emphasized );
+}
+
+.smw-dropdown .smw-dropdown-menu .divider {
+	background-color: var( --border-color-base );
+}
+
+.smw-dropdown-menu::before {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+.smw-dropdown-menu::after {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+/* smw/ext.smw.tabs.css */
+.smw-tabs section,
+.smw-tabs .subtab-content {
+	border-top-color: var( --border-color-base );
+}
+
+// Similar to TabberNeue
+.smw-tabs label.nav-label {
+	font-weight: var( --font-weight-medium );
+	color: var( --color-base--subtle );
+}
+
+.smw-tabs label.nav-label:hover {
+	color: var( --color-primary--hover );
+	border-bottom: 2px solid var( --color-primary--hover );
+}
+
+// Added active state
+.smw-tabs label.nav-label:active {
+	color: var( --color-primary--active );
+	border-bottom: 2px solid var( --color-primary--active );
+}
+
+.smw-tabs input.nav-tab:checked + label.nav-label {
+	color: var( --color-primary );
+	border-color: transparent;
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-primary );
+}
+
+.smw-tabs input.nav-tab:checked + label.nav-label.cached {
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-warning );
+}
+
+.smw-tabs label.nav-label .smw-tab-icon {
+	opacity: var( --opacity-icon-base );
+}
+
+.smw-tabs label.nav-label:hover .smw-tab-icon {
+	opacity: var( --opacity-icon-base--hover );
+}
+
+// Added active state
+.smw-tabs label.nav-label:active .smw-tab-icon,
+.smw-tabs input.nav-tab:checked + label.nav-label .smw-tab-icon {
+	opacity: var( --opacity-icon-base--active );
+}
+
+@media screen and ( max-width: 800px ) {
+	.smw-tabs input.nav-tab:checked + label.nav-label {
+		background-color: var( --background-color-primary--active );
+	}
+}
+
+.smw-tabset > label {
+	color: var( --color-base--subtle );
+}
+
+.smw-tabset > label::after {
+	background: var( --color-base--subtle );
+}
+
+.smw-tabset > input:focus + label,
+.smw-tabset > input:checked + label {
+	color: var( --color-primary );
+}
+
+.smw-tabset > input:focus + label::after,
+.smw-tabset > input:checked + label::after {
+	background: var( --color-primary );
+}
+
+.smw-tabset > input:focus + label.smw-indicator-severity-error::after,
+.smw-tabset > input:checked + label.smw-indicator-severity-error::after {
+	background: var( --color-destructive );
+}
+
+.smw-tabset > input:focus + label.smw-indicator-severity-warning::after,
+.smw-tabset > input:checked + label.smw-indicator-severity-warning::after {
+	background: var( --color-warning );
+}
+
+.smw-tabset > label:hover {
+	color: var( --color-base );
+}
+
+.smw-tabset > label:hover::after {
+	background: var( --color-base );
+}
+
+.smw-tabset > input:checked + label {
+	margin-bottom: -2px;
+	border-color: transparent;
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-primary );
+}
+
+.smw-tabset > input:checked + label.smw-indicator-severity-error {
+	color: var( --color-destructive );
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-destructive );
+}
+
+.smw-tabset > input:checked + label.smw-indicator-severity-warning {
+	color: var( --color-warning );
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-warning );
+}
+
+.tab-panel {
+	border-top-color: var( --border-color-base );
+}
+
+.smw-issue-panel > label::after {
+	background: var( --color-surface-2 );
+}
+
+/* smw/factbox/smw.factbox.css */
+.smwfact {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smwfact td,
+.smwfact tr,
+.smwfact table {
+	background-color: var( --color-surface-2 );
+}
+
+.smwfact .smwfacttable {
+	border-top-color: var( --border-color-base );
+}
+
+.smwfact .smw-table-row:nth-child( odd ) {
+	background-color: var( --color-surface-2 );
+}
+
+.smwfact .smw-table-row:nth-child( even ) {
+	background-color: var( --color-surface-0 );
+}
+
+.rdflink a {
+	color: var( --background-color-icon );
+}
+
+.rdflink a:hover {
+	color: var( --background-color-icon--hover );
+}
+
+// Added active state
+.rdflink a:active {
+	color: var( --background-color-icon--hover );
+}
+
+.smw-factbox section {
+	border-color: var( --border-color-base );
+}
+
+.smw-factbox input.nav-tab:checked + label.nav-label {
+	background: transparent;
+	border-color: transparent;
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-primary );
+}
+
+.smw-factbox input.nav-tab:checked + label#tab-label-facts-attachment.nav-label {
+	border-color: transparent;
+	border-top: 1px solid transparent;
+	border-bottom: 2px solid var( --color-primary );
+}
+
+.smw-factbox .smwfact {
+	background-color: var( --color-surface-0 );
+}
+
+/* smw/smw.indicators.css */
+/* Turn SMW logo into a loading spinner */
+.smw-indicator-vertical-bar-loader {
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	/* Perhaps base64 is not the best for performance */
+	background: url( data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM3NSAzMzUiIHZpZXdCb3g9IjAgMCAzNzUgMzM1Ij48cGF0aCBkPSJNMjY2LjggMzA1SDEwOC4yTDI4LjggMTY3LjUgMTA4LjIgMzBoMTU4LjdsNzkuMyAxMzcuNUwyNjYuOCAzMDV6bS0xNTAtMTVoMTQxLjNsNzAuNy0xMjIuNUwyNTguMiA0NUgxMTYuOEw0Ni4yIDE2Ny41IDExNi44IDI5MHoiLz48Y2lyY2xlIGN4PSIxMTIuNSIgY3k9IjM3LjUiIHI9IjM3LjUiLz48Y2lyY2xlIGN4PSIyNjIuNSIgY3k9IjM3LjUiIHI9IjM3LjUiLz48Y2lyY2xlIGN4PSIzNy41IiBjeT0iMTY3LjUiIHI9IjM3LjUiLz48Y2lyY2xlIGN4PSIzMzcuNSIgY3k9IjE2Ny41IiByPSIzNy41Ii8+PGNpcmNsZSBjeD0iMTEyLjUiIGN5PSIyOTcuNSIgcj0iMzcuNSIvPjxjaXJjbGUgY3g9IjI2Mi41IiBjeT0iMjk3LjUiIHI9IjM3LjUiLz48Y2lyY2xlIGN4PSIxODcuNSIgY3k9IjE2Ny41IiByPSI3NSIvPjwvc3ZnPg== );
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: var( --opacity-icon-base );
+	animation: load2 1s infinite ease-in-out;
+}
+
+.smw-indicator-vertical-bar-loader::before,
+.smw-indicator-vertical-bar-loader::after {
+	content: none;
+}
+
+@keyframes load2 {
+	from {
+		transform: rotate( 0deg );
+	}
+
+	to {
+		transform: rotate( 359deg );
+	}
+}
+
+.smw-icon-indicator-placeholder {
+	background-color: var( --color-surface-2 );
+}
+
+.smw-list-rule-title {
+	color: var( --color-base--emphasized );
+	border-bottom-color: var( --border-color-base );
+}
+
+/*
+ * TODO: Figure what are those
+ * I honestly have no idea what these do
+ */
+/*
+.smw-indicator-accordion-tab {
+  color: var( --color-surface-0 );
+}
+
+.smw-indicator-accordion-tab-label {
+  background: transparent;
+  color: var( --color-base--subtle );
+  border-bottom-color: var( --color-surface-0 );
+}
+
+.smw-indicator-accordion-tab-label:hover {
+  background: var( --background-color-quiet--hover );
+  color: var( --color-base );
+}
+
+// Added active state
+.smw-indicator-accordion-tab-label:active {
+    background: var( --background-color-quiet--active );
+    color: var( --color-base );
+  }
+
+.smw-indicator-accordion-tab:last-child .smw-indicator-accordion-tab-label {
+  border-bottom-color: var( --color-surface-0 );
+}
+
+.smw-indicator-accordion-tab-content {
+  max-height: 0;
+  padding: 0 0.8em;
+  color: #2c3e50;
+  transition: all .35s;
+}
+
+.smw-indicator-accordion-tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #2c3e50;
+  cursor: pointer;
+}
+
+.smw-indicator-accordion-tab .smw-indicator-accordion-tab-label {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 0px solid #fff;
+}
+
+.smw-indicator-accordion-tab-close:hover {
+  background: #333;
+}
+
+input:checked + .smw-indicator-accordion-tab-label {
+  background: #333;
+  color: #fff;
+}
+
+input:checked + .smw-indicator-accordion-tab-label::after {
+    color: #fff;
+    width: 20px;
+    margin-top: 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+*/
+
+// It is not great but it works
+*[ class^='smw-icon-' ] {
+	filter: var( --filter-invert );
+}

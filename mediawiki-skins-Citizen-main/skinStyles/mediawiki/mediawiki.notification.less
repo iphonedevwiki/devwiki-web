@@ -1,0 +1,38 @@
+/*
+ * Citizen
+ *
+ * SkinStyles for MediaWiki notifications
+ * Module: mediawiki.notification
+ * Version: 1.39.0
+ *
+ * Date: 2023-06-23
+ */
+
+.mw-notification-area {
+	padding: var( --space-xs );
+}
+
+.mw-notification {
+	color: var( --color-base--emphasized );
+	background-color: var( --color-surface-1 );
+	border-color: transparent;
+	border-radius: var( --border-radius--medium );
+	box-shadow: var( --box-shadow-dialog );
+
+	&.mw-notification-type {
+		&-warn {
+			background: var( --background-image-warning ) var( --color-surface-0 );
+			border-color: transparent;
+		}
+
+		&-error {
+			background: var( --background-image-destructive ) var( --color-surface-0 );
+			border-color: transparent;
+		}
+
+		&-success {
+			background: var( --background-image-success ) var( --color-surface-0 );
+			border-color: transparent;
+		}
+	}
+}

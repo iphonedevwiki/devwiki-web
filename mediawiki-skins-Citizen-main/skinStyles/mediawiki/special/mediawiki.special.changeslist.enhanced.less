@@ -1,0 +1,37 @@
+/*
+ * Citizen - Recent Changes Styles
+ * https://starcitizen.tools
+*/
+
+/*!
+ * Styling for Special:Watchlist and Special:RecentChanges when preference 'usenewrc'
+ * a.k.a. Enhanced Recent Changes is enabled.
+ */
+.mw-enhanced-rc {
+	td& {
+		font-family: var( --font-family-monospace );
+	}
+
+	&-time {
+		font-family: var( --font-family-monospace );
+	}
+
+	&-nested {
+		display: block;
+		margin-top: var( --space-xxs );
+
+		.mw-tag-markers {
+			margin: var( --space-xxs );
+		}
+	}
+}
+
+/* Fix collapsible button alignment */
+.mw-enhancedchanges-arrow-space {
+	float: none !important;
+	width: 1rem;
+	height: 1rem;
+	padding-top: 0;
+	vertical-align: text-bottom;
+	background-position: left center !important;
+}

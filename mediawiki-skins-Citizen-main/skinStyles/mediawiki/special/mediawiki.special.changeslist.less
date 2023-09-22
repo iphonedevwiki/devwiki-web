@@ -1,0 +1,194 @@
+/*
+ * Citizen
+ *
+ * SkinStyles for Special:RecentChanges and Watchlist
+ * Module: mediawiki.special.changeslist
+ * Version: 1.39.0
+ *
+ * Date: 2023-05-29
+*/
+
+@import '../../../resources/variables.less';
+@import '../../../resources/mixins.less';
+
+/* default.less */
+.mw-plusminus {
+	&-pos {
+		color: var( --color-text-success );
+	}
+
+	&-neg {
+		color: var( --color-text-error );
+	}
+
+	&-null {
+		color: var( --color-base--subtle );
+	}
+}
+
+.mw-changeslist {
+	h4 {
+		z-index: 1; // Needed to cover the timeline dots
+		padding: var( --space-sm ) 0;
+		margin-bottom: 0;
+		font-size: 0.8125rem;
+		font-weight: var( --font-weight-normal );
+		color: var( --color-base--subtle );
+		letter-spacing: 0.05em;
+	}
+
+	&-line {
+		/* Disable timeline dot for nested changeline */
+		.mw-changeslist-line::before {
+			content: none;
+		}
+
+		&-inner {
+			color: var( --color-base--subtle );
+		}
+	}
+
+	&-separator {
+		color: var( --color-base--subtle );
+	}
+}
+
+.cloptions {
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+	> legend {
+		display: none; // Eh it is difficult to style legend
+	}
+
+	&:not( .oo-ui-widget ) {
+		padding: var( --space-md );
+		font-size: 0.875rem;
+		background: var( --color-surface-2 );
+		border-radius: var( --border-radius--medium );
+	}
+}
+
+/* Skeleton screen loading */
+body:not( .mw-rcfilters-ui-initialized ) .mw-rcfilters-head {
+	padding: var( --space-md );
+	font-size: 0.875rem;
+	background: var( --color-surface-2 );
+	border-radius: var( --border-radius--medium );
+}
+
+.client-js {
+	.mw-recentchanges-toplinks {
+		padding-left: 0;
+	}
+
+	.mw-recentchanges-toplinks:not( .mw-recentchanges-toplinks-collapsed ) {
+		padding: 0; /* Shift padding to button only */
+		margin-bottom: 16px; /* Same margin between rcfilter and saved filter */
+		border-color: var( --border-color-base );
+		border-radius: var( --border-radius--small );
+
+		/* Extend button to full width */
+		.oo-ui-buttonElement-frameless.oo-ui-labelElement:first-child {
+			display: block;
+			background: var( --color-surface-2 );
+			border-top-left-radius: var( --border-radius--small );
+			border-top-right-radius: var( --border-radius--small );
+
+			.oo-ui-buttonElement-button {
+				display: block;
+			}
+
+			.oo-ui-indicatorElement-indicator {
+				right: 6px !important;
+			}
+		}
+	}
+}
+
+.mw-recentchanges-toplinks {
+	.oo-ui-buttonElement-frameless.oo-ui-labelElement:first-child {
+		margin: 0;
+	}
+}
+
+/*
+ * Only apply stick header style on the special pages
+ * Sometimes wiki transclude those pages and these styles will break regular pages
+ */
+.ns-special {
+	.mw-changeslist h4 {
+		.citizen-sticky-header( 0, false, false );
+	}
+
+	// Disable sticky header
+	#citizen-body-header-sticky-sentinel {
+		display: none;
+	}
+}
+
+/*
+ * Make changelist looks like a timeline
+ * And also sync different history lists into the same styles
+ */
+.mw-changeslist,
+.mw-contributions-list {
+	position: relative;
+	font-size: 0.875rem;
+
+	/* Timeline line */
+	&::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 4px;
+		width: 1px;
+		content: '';
+		background: var( --border-color-base--darker );
+	}
+}
+
+.mw-changeslist ul,
+.mw-contributions-list {
+	margin: 0 !important;
+	list-style: none;
+}
+
+.mw-changeslist-line,
+.mw-contributions-list li {
+	padding: var( --space-sm ) var( --space-xs ) !important;
+	margin: 0 0 0 16px !important;
+	color: var( --color-base--subtle );
+	border-radius: var( --border-radius--small );
+
+	&:hover {
+		background-color: var( --background-color-quiet--hover );
+
+		&::before {
+			background-color: var( --color-base--emphasized );
+		}
+	}
+
+	/* Timeline dot */
+	&::before {
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 8px;
+		height: 8px;
+		margin-top: 7px;
+		content: '';
+		background-color: var( --color-base--subtle );
+		border-radius: 100%;
+	}
+
+	.comment {
+		color: var( --color-base ); // Make comment more readable
+	}
+}
+
+.mw-pager-navigation-bar {
+	margin: var( --space-md ) 0;
+	color: var( --color-base--subtle );
+}
