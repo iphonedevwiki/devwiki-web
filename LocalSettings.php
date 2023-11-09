@@ -220,4 +220,6 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 if ( file_exists("/var/www-shared/html/PrivateSettings.php") ) {
 	require_once("/var/www-shared/html/PrivateSettings.php");
 }
+$wgShowDebug = false;
+$wgDevelopmentWarnings = false;
 ?>
