@@ -17,7 +17,7 @@ jobs:
     - name: Connect to registry
       env:
         SK_DO_DOCKER_REGISTRY_API_KEY: ${{ secrets.SK_DO_DOCKER_REGISTRY_API_KEY }}
-      run: echo $SK_DO_DOCKER_REGISTRY_API_KEY | docker login registry.digitalocean.com --username $SK_DO_DOCKER_REGISTRY_API_KEY --password-stdin
+      run: docker login registry.digitalocean.com --username $SK_DO_DOCKER_REGISTRY_API_KEY --password $SK_DO_DOCKER_REGISTRY_API_KEY
     - name: Push new image
       env:
         DEPLOY_TARGET_REGISTRY: ${{ vars.DEPLOY_TARGET_REGISTRY }}
