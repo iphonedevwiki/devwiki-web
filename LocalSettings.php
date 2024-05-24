@@ -200,6 +200,9 @@ $wgGroupPermissions['sysop'         ]['skipcaptcha'] = true;
 $wgGroupPermissions['emailconfirmed']['skipcaptcha'] = true;
 $ceAllowConfirmedEmail = true;
 
+// Disable account creation 'temporarily' due to ongoing automated spam
+$wgGroupPermissions['*']['createaccount'] = false;
+
 $wgShowExceptionDetails = false;
 
 $wgRCMaxAge = 1300 * 7 * 24 * 3600;
